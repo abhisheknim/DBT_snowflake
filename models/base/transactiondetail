@@ -1,0 +1,7 @@
+{{ config(materialized="table") }}
+
+
+WITH transcte as  (
+select HVMG.def.* from transactionsdaydetail transdetail,transactions def where transdetail.SITEID = def.SITEID) 
+)
+select *from transcte
